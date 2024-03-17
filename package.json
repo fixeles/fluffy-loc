@@ -1,0 +1,18 @@
+{
+    "name": "com.fps.localization",
+    "author": "Fixel",
+    "displayName": "FPS Localization",
+    "unity": "2022.3",
+    "version": "0.0.1",
+    "keywords": [
+        "Fluffy Pixel",
+        "fps"
+    ],
+    "dependencies": {
+	"com.fps.core": "0.0.1"
+	},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tka27/fluffy-loc"
+    }
+}
