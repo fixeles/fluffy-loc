@@ -15,7 +15,7 @@ namespace FPS.Localization
 
         public static void SetLanguage(string languageKey) => _currentLanguage = languageKey;
 
-        private static void Init()
+        public static void Init()
         {
             var isLocFileHasSystemLanguage = false;
             _currentLanguage = SystemLanguage;
@@ -60,9 +60,6 @@ namespace FPS.Localization
 
         public static string Get(string key)
         {
-            if (DataTable.Rows.Count == 0)
-                Init();
-
             StringBuilder.Append("key = '");
             StringBuilder.Append(key);
             StringBuilder.Append("'");
@@ -87,21 +84,16 @@ namespace FPS.Localization
             return key;
         }
 
-        // #if UNITY_ANDROID && !UNITY_EDITOR //Android WebGL
-        //      private static string SystemLanguage
-        //      {
-        //          get
-        //          {
-        //              AndroidJavaClass localeClass = new AndroidJavaClass("java.util.Locale");
-        //              AndroidJavaObject defaultLocale = localeClass.CallStatic<AndroidJavaObject>("getDefault");
-        //              return defaultLocale.Call<string>("getLanguage");
-        //          }
-        //      }
     #if UNITY_WEBGL && !UNITY_EDITOR //Windows WebGL
-        private static string SystemLanguage => GetSystemLanguageJS().Split('-')[0].ToLower(); 
-
-        [System.Runtime.InteropServices.DllImport("__Internal")]
-        private static extern string GetSystemLanguageJS();
+        #if BUILD_YANDEX
+            private static string SystemLanguage => GetYandexLanguageJS().Split('-')[0].ToLower();
+            [System.Runtime.InteropServices.DllImport("__Internal")]
+            private static extern string GetYandexLanguageJS();
+        #else
+            private static string SystemLanguage => GetSystemLanguageJS().Split('-')[0].ToLower(); 
+            [System.Runtime.InteropServices.DllImport("__Internal")]
+            private static extern string GetSystemLanguageJS();
+        #endif
     #else //Windows or Android
         private static string SystemLanguage => CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
     #endif
