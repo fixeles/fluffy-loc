@@ -1,7 +1,17 @@
 {
     "name": "FPS.Localization",
+    "rootNamespace": "",
     "references": [
-        "GUID:4ce7d9da630ee21438fefeb8c8c1bb99",
-        "GUID:6055be8ebefd69e48b49212b09b47b2f"
-    ]
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:0a0d96f11aa7567429557cbc5ea9a1ee"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

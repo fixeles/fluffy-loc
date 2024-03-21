@@ -8,9 +8,7 @@
     "Fluffy Pixels",
     "fps"
   ],
-  "dependencies": {
-    "com.fps.core": "git@github.com/fixeles/fps-lib.git"
-  },
+  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/fixeles/fluffy-loc"
