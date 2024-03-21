@@ -9,7 +9,7 @@
     "fps"
   ],
   "dependencies": {
-    "com.fps.core": "https://github.com/fixeles/fps-lib.git"
+    "com.fps.core": "https://github.com/fixeles/fps-lib.git#revision"
   },
   "repository": {
     "type": "git",
